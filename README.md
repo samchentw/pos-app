@@ -6,9 +6,9 @@
 
 
 ## Use By
-- wails
-- vue 
-- Tailwindcss
+- [Wails](https://wails.io/docs/gettingstarted/installation/)
+- [Vue](https://vuejs.org/)
+- [Tailwindcss](https://tailwindcss.com/)
 
 
 ## Develop
