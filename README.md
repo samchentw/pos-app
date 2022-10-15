@@ -33,3 +33,11 @@ wails build -platform=darwin/arm64 # or darwin/amd64
 ```
 wails build -platform=linux/arm64  # or linux/amd64
 ```
+
+
+![2022-10-15 14-47-25 的螢幕擷圖](https://user-images.githubusercontent.com/89454932/195973406-4aadf03d-3594-4268-ada4-f6ff384463c5.png)
+
+![image](https://user-images.githubusercontent.com/89454932/195973435-106b1b96-0f48-48de-b03d-f8dd7467b972.png)
+
+![image](https://user-images.githubusercontent.com/89454932/195973457-f39d55f4-a6b4-4fc6-93db-1cd2a9f7d024.png)
+
