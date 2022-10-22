@@ -56,6 +56,7 @@
       </form>
     </div>
     <div>
+      {{ count }}
       <div class="overflow-x-auto relative shadow-md sm:rounded-lg">
         <table class="w-full text-lg font-bold text-left text-gray-500">
           <thead class="text-lg text-gray-700 uppercase bg-gray-50">
@@ -147,6 +148,8 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import AppLayout from "../../layouts/AppLayout.vue";
+import { mapState } from "pinia";
+import { useConfigStore } from "../../stores/config";
 
 export default defineComponent({
   props: {},
@@ -179,7 +182,9 @@ export default defineComponent({
       ],
     };
   },
-  created() {},
+  created() {
+    // useConfigStore().$patch({ count: 4 });
+  },
   watch: {},
   computed: {
     headers() {
@@ -198,6 +203,9 @@ export default defineComponent({
         { text: "操作", value: "action" },
       ];
     },
+    ...mapState(useConfigStore, {
+      count: "count",
+    }),
   },
   methods: {
     edit(input: string) {
