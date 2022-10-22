@@ -91,7 +91,7 @@
 
       <!-- right -->
       <template v-slot:right-content>
-        <Product></Product>
+        <product></product>
       </template>
       <template v-slot:right-footer>
         <div class="text-right mt-2">
@@ -147,7 +147,7 @@ export default defineComponent({
         {
           name: "蘋果",
           count: 2,
-          price: 100,
+          price: 200,
           show: false,
         },
         {

@@ -127,6 +127,7 @@
               <td class="py-4 px-6">無設定</td>
               <td class="py-4 px-6 text-right">
                 <button
+                  @click="testOpen()"
                   class="mr-2 bg-teal-500 hover:bg-teal-600 text-white font-bold py-1 px-4 rounded"
                 >
                   前往結帳
@@ -143,47 +144,31 @@
         </table>
       </div>
     </div>
+    <Modal ref="exampleModal" />
   </app-layout>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
 import AppLayout from "../../layouts/AppLayout.vue";
+import Modal from "../../components/Template/Modal.vue";
 import { mapState } from "pinia";
-import { useConfigStore } from "../../stores/config";
+import { usePageIndexStore } from "../../stores/pages/index";
 
 export default defineComponent({
   props: {},
   components: {
     AppLayout,
+    Modal,
   },
   data() {
     return {
       selectedItem: 1,
-      items: [
-        { text: "Real-Time", icon: "mdi-clock" },
-        { text: "Audience", icon: "mdi-account" },
-        { text: "Conversions", icon: "mdi-flag" },
-      ],
-      tabItems: [
-        { display_name: "美學類" },
-        { display_name: "住宿類" },
-        { display_name: "安親類" },
-        { display_name: "測試1" },
-        { display_name: "測試2" },
-      ],
       search: "",
       calories: "",
-      desserts: [
-        {
-          no: "001",
-          time: "2022/08/31 10:00",
-          customer: "Frozen Yogurt",
-        },
-      ],
     };
   },
   created() {
-    // useConfigStore().$patch({ count: 4 });
+    usePageIndexStore().$patch({ count: 99 });
   },
   watch: {},
   computed: {
@@ -203,13 +188,16 @@ export default defineComponent({
         { text: "操作", value: "action" },
       ];
     },
-    ...mapState(useConfigStore, {
+    ...mapState(usePageIndexStore, {
       count: "count",
     }),
   },
   methods: {
     edit(input: string) {
       console.log(input);
+    },
+    testOpen() {
+      this.$refs.exampleModal.open();
     },
   },
 });
